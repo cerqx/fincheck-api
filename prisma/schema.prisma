@@ -8,10 +8,11 @@ datasource db {
 }
 
 model User {
-  id       String @id @default(uuid()) @db.Uuid
-  name     String
-  email    String @unique
-  password String
+  id          String        @id @default(uuid()) @db.Uuid
+  name        String
+  email       String        @unique
+  password    String
+  bankAccount BankAccount[]
 
   @@map("users")
 }
@@ -30,6 +31,9 @@ model BankAccount {
   name           String
   initialBalance Float           @map("initial_balance")
   type           BankAccountType
+  color          String
+
+  user User @relation(fields: [userId], references: [id])
 
   @@map("bank_accounts")
 }
