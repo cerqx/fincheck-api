@@ -8,6 +8,6 @@ export class AuthController {
 
   @Post('signin')
   authenticate(@Body() authenticateDto: AuthenticateDto) {
-    return 'Authenticate';
+    return this.authService.authenticate(authenticateDto);
   }
 }
