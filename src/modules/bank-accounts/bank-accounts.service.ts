@@ -26,8 +26,12 @@ export class BankAccountsService {
     });
   }
 
-  update(id: string, updateBankAccountDto: UpdateBankAccountDto) {
-    return `This action updates a #${id} bankAccount`;
+  async update(
+    userId: string,
+    bankAccountId: string,
+    updateBankAccountDto: UpdateBankAccountDto,
+  ) {
+    return { userId, bankAccountId, updateBankAccountDto };
   }
 
   remove(id: string) {

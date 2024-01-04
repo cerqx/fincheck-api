@@ -29,12 +29,17 @@ export class BankAccountsController {
     return this.bankAccountsService.findAllByUserId(userId);
   }
 
-  @Put(':id')
+  @Put(':bankAccountId')
   update(
-    @Param('id') id: string,
+    @ActiveUserId() userId: string,
+    @Param('bankAccountId') bankAccountId: string,
     @Body() updateBankAccountDto: UpdateBankAccountDto,
   ) {
-    return this.bankAccountsService.update(id, updateBankAccountDto);
+    return this.bankAccountsService.update(
+      userId,
+      bankAccountId,
+      updateBankAccountDto,
+    );
   }
 
   @Delete(':id')
