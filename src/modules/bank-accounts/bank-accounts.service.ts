@@ -26,10 +26,6 @@ export class BankAccountsService {
     });
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} bankAccount`;
-  }
-
   update(id: number, updateBankAccountDto: UpdateBankAccountDto) {
     return `This action updates a #${id} bankAccount`;
   }
