@@ -34,11 +34,11 @@ export class BankAccountsController {
     @Param('id') id: string,
     @Body() updateBankAccountDto: UpdateBankAccountDto,
   ) {
-    return this.bankAccountsService.update(+id, updateBankAccountDto);
+    return this.bankAccountsService.update(id, updateBankAccountDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.bankAccountsService.remove(+id);
+    return this.bankAccountsService.remove(id);
   }
 }
