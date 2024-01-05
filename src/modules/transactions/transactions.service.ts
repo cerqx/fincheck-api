@@ -8,7 +8,7 @@ export class TransactionsService {
     return 'This action adds a new transaction';
   }
 
-  findAll() {
+  findAllByUserId(userId: string) {
     return `This action returns all transactions`;
   }
 
