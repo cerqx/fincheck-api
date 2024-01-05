@@ -21,4 +21,8 @@ export class BankAccountsRepository {
   findFirst(findFirstDto: Prisma.BankAccountFindFirstArgs) {
     return this.prismaService.bankAccount.findFirst(findFirstDto);
   }
+
+  delete(deleteDto: Prisma.BankAccountDeleteArgs) {
+    return this.prismaService.bankAccount.delete(deleteDto);
+  }
 }
