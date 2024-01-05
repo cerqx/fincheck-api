@@ -12,15 +12,11 @@ export class TransactionsService {
     return `This action returns all transactions`;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} transaction`;
-  }
-
-  update(id: number, updateTransactionDto: UpdateTransactionDto) {
+  update(id: string, updateTransactionDto: UpdateTransactionDto) {
     return `This action updates a #${id} transaction`;
   }
 
-  remove(id: number) {
+  remove(id: string) {
     return `This action removes a #${id} transaction`;
   }
 }
