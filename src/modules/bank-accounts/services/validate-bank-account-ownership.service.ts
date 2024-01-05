@@ -4,6 +4,7 @@ import { BankAccountsRepository } from 'src/shared/database/repositories/bank-ac
 @Injectable()
 export class ValidateBankAccountOwnershipService {
   constructor(private readonly bankAccountsRepo: BankAccountsRepository) {}
+
   async validate(userId: string, bankAccountId: string) {
     const isOwner = await this.bankAccountsRepo.findFirst({
       where: { id: bankAccountId, userId },
