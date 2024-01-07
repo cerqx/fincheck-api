@@ -39,7 +39,6 @@ export class TransactionsService {
   }
 
   findAllByUserId(userId: string, filters: { month: number; year: number }) {
-    console.log({ filters });
     return this.transactionsRepo.findMany({
       where: {
         userId,
